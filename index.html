@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sigrid Caballero | Portfolio</title>
+<meta name="description" content="Portfolio of Sigrid Caballero: web development skills and contact information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef4f6; --grid:#cfe0e6; --ink:#1b2a41; --muted:#4d5d73;
+  --margin:#d1495b; --hi:#f6e05e; --teal:#14877b; --white:#fffefb;
+  --head:"Young Serif",Georgia,"Times New Roman",serif;
+  --body:"Karla",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.65;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+a{color:var(--teal);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--margin);outline-offset:3px;border-radius:3px}
+.page{position:relative;max-width:1060px;margin:0 auto;padding:0 1.25rem}
+@media (min-width:820px){
+  .page{padding-left:6.5rem}
+  .page::before{content:"";position:absolute;left:4.2rem;top:0;bottom:0;width:2px;background:var(--margin);opacity:.55}
+}
+h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.08;margin:0 0 1rem}
+h1{font-size:clamp(3rem,11vw,7rem);letter-spacing:-.02em}
+h2{font-size:clamp(2rem,5vw,3rem)}
+h3{font-size:1.45rem}
+
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding:1.1rem 0}
+.bar .mark{font-family:var(--head);font-size:1.2rem;color:var(--ink);text-decoration:none}
+.bar nav a{color:var(--ink);margin-left:1.2rem;font-weight:700;text-decoration:none;background:linear-gradient(var(--hi),var(--hi)) 0 100%/0 40% no-repeat;transition:background-size .2s}
+.bar nav a:hover{background-size:100% 40%}
+
+/* hero */
+.hero{padding:4rem 0 3rem;position:relative}
+.hero .lead{font-size:1.35rem;max-width:34rem;margin:0}
+.note{position:relative;display:block;width:fit-content;max-width:18rem;background:var(--hi);padding:1.1rem 1.2rem 1rem;box-shadow:3px 4px 0 rgba(27,42,65,.18);transform:rotate(2.5deg);margin:2rem 0 0;font-weight:500;line-height:1.4}
+.note b{display:block;font-family:var(--head);font-weight:400;font-size:1.1rem;margin-bottom:.2rem}
+@media (min-width:820px){.note{position:absolute;right:0;top:1.5rem;margin:0}}
+
+section{padding:3.5rem 0 1rem}
+.tag{display:inline-block;font-weight:700;color:var(--margin);margin-bottom:.4rem}
+
+/* about + skills */
+.about{display:grid;gap:2.5rem}
+.about p{max-width:38rem;margin:0 0 1rem}
+.skill-sheet{background:var(--white);border:2px solid var(--ink);padding:1.25rem 1.4rem;box-shadow:6px 6px 0 var(--ink)}
+.skill-sheet h3{margin-bottom:.4rem}
+.skill-sheet .key{color:var(--muted);font-size:.92rem;margin:0 0 .8rem}
+.skill{display:grid;grid-template-columns:1fr auto;gap:.1rem .8rem;align-items:center;padding:.7rem 0;border-top:1px dashed var(--grid)}
+.skill:first-of-type{border-top:0}
+.skill .what{grid-column:1/-1;color:var(--muted);font-size:.95rem}
+.dots{display:inline-flex;gap:.3rem}
+.dots i{width:.85rem;height:.85rem;border-radius:50%;border:2px solid var(--ink);display:block}
+.dots i.on{background:var(--teal);border-color:var(--teal)}
+@media (min-width:820px){.about{grid-template-columns:1.1fr 1fr}}
+
+/* projects: three different layouts */
+.work{display:grid;gap:2rem}
+.shot{background:repeating-linear-gradient(135deg,var(--grid),var(--grid) 8px,var(--white) 8px,var(--white) 16px);aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;color:var(--muted);font-size:.9rem;border:2px solid var(--ink)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.facts{margin:0 0 .8rem}
+.facts dt{font-weight:700;margin-top:.5rem}
+.facts dd{margin:0;color:var(--muted)}
+
+.stack{list-style:none;padding:0;margin:0 0 1rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.stack li{background:var(--hi);border:2px solid var(--ink);border-radius:999px;padding:0 .7rem;font-size:.92rem;font-weight:700}
+.facts dt:last-child{margin-bottom:.4rem}
+.feature{display:grid;gap:1.5rem;background:var(--white);border:2px solid var(--ink);padding:1.25rem;box-shadow:8px 8px 0 var(--teal)}
+.feature .tag{color:var(--teal)}
+
+.polaroid{background:var(--white);padding:.9rem .9rem 1.3rem;border:1px solid var(--grid);box-shadow:0 6px 0 rgba(27,42,65,.12)}
+.polaroid .shot{border-width:1px}
+.polaroid h3{margin-top:1rem}
+
+.strip{display:grid;gap:1rem;border-left:6px solid var(--margin);padding:.4rem 0 .4rem 1.1rem}
+.strip .shot{max-width:22rem}
+
+@media (min-width:820px){
+  .feature{grid-template-columns:1.25fr 1fr;align-items:center;padding:1.6rem}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+  .polaroid{transform:rotate(-1.2deg)}
+  .strip{grid-template-columns:22rem 1fr;align-items:center}
+}
+.pair{display:grid;gap:2rem}
+@media (min-width:820px){.pair{grid-template-columns:1fr 1.3fr}}
+
+/* contact */
+.contact{padding-bottom:5rem}
+.card{position:relative;background:var(--white);border:2px solid var(--ink);padding:1.6rem 1.4rem;max-width:40rem;background-image:repeating-linear-gradient(90deg,var(--margin) 0 18px,transparent 18px 30px,var(--teal) 30px 48px,transparent 48px 60px);background-size:100% 8px;background-repeat:no-repeat;background-position:0 0;padding-top:2.2rem}
+.card p{margin:0 0 1rem}
+.email{font-family:var(--head);font-size:clamp(1.3rem,5.5vw,2rem);word-break:break-word;color:var(--ink)}
+.stamp{display:none}
+@media (min-width:620px){
+  .stamp{display:grid;place-items:center;position:absolute;right:1.2rem;top:2rem;width:4.2rem;height:5rem;border:2px dashed var(--margin);color:var(--margin);font-family:var(--head);font-size:1.6rem;transform:rotate(4deg)}
+}
+footer{padding:1.5rem 0 2rem;color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="bar">
+  <a class="mark" href="#home">Sigrid Caballero</a>
+  <nav aria-label="Main">
+    <a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<!-- HOME -->
+<section id="home" class="hero">
+  <h1>Sigrid<br>Caballero</h1>
+  <p class="lead">I’m a student learning to build websites and web apps. I enjoy turning ideas into clean, easy-to-use pages, and I want to grow into a full-stack web developer.</p>
+  <p class="note"><b>Right now I’m learning</b>Django back ends, and how to connect them to React front ends.</p>
+</section>
+
+<!-- ABOUT AND SKILLS -->
+<section id="about">
+  <h2>About me</h2>
+  <div class="about">
+    <div>
+      <p>I started with HTML and CSS in class, then moved on to JavaScript and React.js to make pages interactive. I also use Python and Django to learn how the server side of a website works.</p>
+      <p>I like organizing information clearly, and I enjoy designing layouts that look good on a phone. I’m practicing by following tutorials and class exercises.</p>
+      <p>My goal this year is to build my first complete full-stack project with React.js and Django, and to get more comfortable with TypeScript.</p>
+    </div>
+    <div class="skill-sheet">
+      <h3>Skills</h3>
+      <p class="key">Filled dots show my honest level: 1 = just started, 2 = comfortable, 3 = confident.</p>
+      <!-- EDIT: change names, descriptions, and which dots have class="on" -->
+      <div class="skill"><strong>HTML and CSS</strong><span class="dots" role="img" aria-label="Level 3 of 3"><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="what">I can build responsive, accessible pages and layouts with Flexbox and Grid.</span></div>
+      <div class="skill"><strong>JavaScript</strong><span class="dots" role="img" aria-label="Level 2 of 3"><i class="on"></i><i class="on"></i><i></i></span><span class="what">I can handle events, work with arrays, and update the page without reloading.</span></div>
+      <div class="skill"><strong>TypeScript</strong><span class="dots" role="img" aria-label="Level 1 of 3"><i class="on"></i><i></i><i></i></span><span class="what">I’m learning types and interfaces, and how to use them with React.</span></div>
+      <div class="skill"><strong>React.js</strong><span class="dots" role="img" aria-label="Level 2 of 3"><i class="on"></i><i class="on"></i><i></i></span><span class="what">I can build components, use state and props, and manage simple forms and lists.</span></div>
+      <div class="skill"><strong>DaisyUI</strong><span class="dots" role="img" aria-label="Level 2 of 3"><i class="on"></i><i class="on"></i><i></i></span><span class="what">I can use its components with Tailwind classes to style apps quickly.</span></div>
+      <div class="skill"><strong>Python</strong><span class="dots" role="img" aria-label="Level 2 of 3"><i class="on"></i><i class="on"></i><i></i></span><span class="what">I can write scripts, use functions and classes, and work with files and data.</span></div>
+      <div class="skill"><strong>Django</strong><span class="dots" role="img" aria-label="Level 1 of 3"><i class="on"></i><i></i><i></i></span><span class="what">I’m learning models, views, templates, and the admin site.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <span class="stamp" aria-hidden="true">@</span>
+    <p>Questions, feedback, or chances to learn: write to me.</p>
+    <!-- EDIT: use a professional email address -->
+    <p><a class="email" href="mailto:sigrid.caballero@example.com">sigridcaballero4@gmail.com</a></p>
+    
+  </div>
+</section>
+</main>
+
+<footer>© <span id="year">2026</span> Sigrid Caballero</footer>
+</div>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>
